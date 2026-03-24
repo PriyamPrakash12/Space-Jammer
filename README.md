@@ -1,15 +1,80 @@
-Space Jammer is a retro-inspired 2D arcade shooter currently in development using Godot. It blends fast-paced space combat with evolving level design, building upon the foundation of my earlier project, Space Shooter (developed with libGDX), and taking the concept further in both gameplay and structure.
+# 🚀 Space Jammer
 
-Players will navigate increasingly challenging stages filled with hostile entities and unpredictable cosmic hazards. While the core mechanics draw inspiration from classic arcade shooters, the game introduces a progression system designed to keep each session engaging and varied.
+**Space Jammer** is a retro-inspired 2D arcade shooter currently in development using Godot. It blends fast-paced space combat with evolving level design, expanding upon my earlier project *Space Shooter* (built with libGDX).
 
-In addition to structured levels, Space Jammer will feature an endless mode focused on survival, testing player skill, reflexes, and adaptability over time.
+---
 
-This project is actively in progress, with more features, mechanics, and refinements planned for future development.
+## 🎮 Overview
 
-Here are some potential future additions:
+Navigate through increasingly challenging levels filled with hostile enemies and unpredictable cosmic hazards. Inspired by classic arcade shooters, *Space Jammer* introduces a progression system designed to keep gameplay engaging and dynamic.
 
-*   Power-ups: Introduce temporary boosts such as increased fire rate, shields, or special attacks.
-*   Customization: Allow players to personalize their ships with different skins, modules, or visual effects.
-*   Boss Fights: Design unique and challenging boss encounters to test player skills at the end of certain levels or in specific modes.
-*   Sound Design: Enhance the audio experience with dynamic sound effects, original music tracks, and impactful explosions.
-*   Multiplayer: Enable cooperative or competitive modes to allow players to team up or compete against each other.
+In addition to structured levels, the game will feature an **endless survival mode** that tests player reflexes, strategy, and adaptability over time.
+
+---
+
+## ✨ Features (Planned & In Progress)
+
+- ⚡ Fast-paced arcade shooting mechanics  
+- 🌌 Progressive level-based gameplay  
+- ♾️ Endless survival mode
+- 👾 **Boss Fights** — Unique and challenging encounters  
+- 🚀 Smooth player controls and movement system  
+
+### 🚧 Planned Features
+
+- 🔥 **Power-ups** — Fire rate boosts, shields, and special abilities  
+- 🎨 **Customization** — Ship skins, visual effects, and upgrades  
+- 🔊 **Sound Design** — Immersive audio and music  
+- 🧑‍🤝‍🧑 **Multiplayer** — Co-op and competitive modes (planned)  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Engine:** Godot  
+- **Language:** GDScript (primary), with potential use of C# for specific features  
+- **Previous Project:** Space Shooter (libGDX)  
+
+---
+
+## 🎯 Project Status
+
+🚧 **Currently in Development**  
+Paused temporarily due to exams — development will resume soon.
+
+---
+
+## 🧠 Learning Goals
+
+This project focuses on:
+
+- Game architecture and scalability  
+- Player experience and game feel  
+- Level design and progression systems  
+- Transition from libGDX to Godot  
+
+---
+
+## 🤝 Contributing
+
+This is currently a personal project, but suggestions and feedback are welcome!
+
+---
+
+## 👤 Author
+
+**Priyam Prakash**
+
+---
+
+## 🌟 Future Vision
+
+*Space Jammer* aims to evolve into a polished arcade experience combining:
+
+- Classic retro gameplay  
+- Modern progression systems  
+- Replayable and skill-based mechanics  
+
+---
+
+⭐ If you like the project, consider giving it a star!
