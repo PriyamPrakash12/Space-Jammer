@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bo2kivcbgiebx"]
+
+[ext_resource type="Script" uid="uid://d6l7ytol10n0" path="res://Script/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://blgnw5s4le0l8" path="res://Assest/Player/L1 Boss.png" id="1_hghv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpow"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1f35n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f0kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afpow")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyxqm"]
+radius = 5.3851647
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1331673891]
+script = ExtResource("1_1f0kj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1189339605]
+sprite_frames = SubResource("SpriteFrames_1f35n")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.36483055
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353558862]
+shape = SubResource("CircleShape2D_wyxqm")

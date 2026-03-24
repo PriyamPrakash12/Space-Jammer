@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bpqwu3jq2artm"]
+
+[ext_resource type="Texture2D" uid="uid://xbvs2ncxsi01" path="res://Assest/Player/Enemy.png" id="1_l0rk7"]
+[ext_resource type="Script" uid="uid://jxvt08y8qp5x" path="res://Script/little_enemy.gd" id="1_qfwef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwef"]
+atlas = ExtResource("1_l0rk7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xn06n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1y710"]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gry3c"]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lemn"]
+radius = 1.4142135
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82nt1"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vak5o"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7ikx"]
+radius = 1.0
+height = 4.0
+
+[node name="Little Enemy" type="CharacterBody2D" unique_id=1240577839 groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_qfwef")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1703558896]
+sprite_frames = SubResource("SpriteFrames_xn06n")
+frame_progress = 0.91796196
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1080002123]
+position = Vector2(-12, 2)
+shape = SubResource("CircleShape2D_1y710")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1346918107]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_gry3c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1371712162]
+position = Vector2(11, 2)
+shape = SubResource("CircleShape2D_6lemn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2049191190]
+position = Vector2(-12, -11)
+shape = SubResource("CapsuleShape2D_82nt1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=186516737]
+position = Vector2(1, -11)
+shape = SubResource("CapsuleShape2D_vak5o")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=2024254341]
+position = Vector2(11, -11)
+shape = SubResource("CapsuleShape2D_m7ikx")

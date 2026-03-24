@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dmwsvbp7im3u"]
+
+[ext_resource type="PackedScene" uid="uid://dq2dmltgc5pl1" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://nktsglbx2v6t" path="res://Script/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bo2kivcbgiebx" path="res://Scenes/enemy.tscn" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://cughwyg5sawuq" path="res://Assest/Worlds/World L2.png" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bpqwu3jq2artm" path="res://Scenes/little_enemy.tscn" id="4_wowpa"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ebmjs"]
+distance = -64.0
+
+[sub_resource type="GDScript" id="GDScript_wowpa"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[node name="Game" type="Node2D" unique_id=1913644805]
+script = ExtResource("1_wowpa")
+
+[node name="Player" parent="." unique_id=122596853 instance=ExtResource("1_ebmjs")]
+position = Vector2(-1, 58)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=779004661]
+position = Vector2(0, -1)
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1865374574]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1099872863]
+position = Vector2(-1, -6)
+shape = SubResource("WorldBoundaryShape2D_ebmjs")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1619487331]
+z_index = -4096
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=501199486]
+position = Vector2(72.5, -1.0000021)
+scale = Vector2(4.53125, 5.0625)
+texture = ExtResource("4_3dryh")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1238353553]
+z_index = -4096
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1182776264]
+position = Vector2(-73.25001, -0.49999225)
+scale = Vector2(4.6093745, 5.0937505)
+texture = ExtResource("4_3dryh")
+
+[node name="Little Enemy" parent="Parallax2D2" unique_id=1240577839 instance=ExtResource("4_wowpa")]
+position = Vector2(0, -29)
+
+[node name="Little Enemy2" parent="Parallax2D2" unique_id=1698602388 instance=ExtResource("4_wowpa")]
+position = Vector2(-81, -30)
+
+[node name="Little Enemy3" parent="Parallax2D2" unique_id=156229073 instance=ExtResource("4_wowpa")]
+position = Vector2(90, -29)
+
+[node name="Enemy" parent="." unique_id=1331673891 instance=ExtResource("2_qxrlw")]
+visible = false
+position = Vector2(0, -63)
+script = SubResource("GDScript_wowpa")
+
+[node name="Little Enemy" parent="." unique_id=406660288 instance=ExtResource("4_wowpa")]
